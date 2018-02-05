@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Cornell</string>
+    <string name="corenell_distributors">Corenell Distributors</string>
+    <string name="signup">Signup</string>
+    <string name="home">Home</string>
+    <string name="login">Login</string>
+    <string name="select_date">Select Date</string>
+
+
+    <string-array name="title_arrays">
+        <item>Mr</item>
+        <item>Mrs</item>
+        <item>Dr</item>
+        <item>Sir</item>
+        <item>Rev</item>
+    </string-array>
+    <string-array name="newsletter_arrays">
+        <item>Subscribed To Newsletter</item>
+        <item>True</item>
+        <item>False</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="topup">Top-Up</string>
+    <string name="history">History</string>
+
+
+</resources>
