@@ -1,715 +1,715 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <android.support.v4.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/main_color"
-        android:clipToPadding="false"
         android:orientation="vertical"
+        android:id="@+id/scrollView"
         tools:context="app.now.com.cornell.Fragments.SignUpFragment">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
             android:background="@color/main_color"
-            android:orientation="vertical">
-
-            <LinearLayout
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <!--  email  -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/main_color"
-                android:orientation="vertical"
-                android:padding="10dp">
-                <!--  email  -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_height="wrap_content">
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/emailWrapper"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Email"
-                            android:inputType="textEmailAddress"
-                            android:maxLines="1"
-                            android:singleLine="true" />
-
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  password  -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/passwordWrapper"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/password"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Password"
-                            android:inputType="textEmailAddress"
-                            android:maxLines="1"
-                            android:singleLine="true" />
-
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  title  -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-
-                </RelativeLayout>
-                <!--  first name  -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.v7.widget.AppCompatSpinner
-                        android:id="@+id/title_dropdown"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        android:minHeight="40dp"
-                        android:minWidth="60dp" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/firstnameWrapper"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_toRightOf="@id/title_dropdown"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/firstname"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="First Name"
-                            android:inputType="textEmailAddress"
-                            android:maxLines="1"
-                            android:singleLine="true" />
-
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  last name  -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/lastnameWrapper"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/lastname"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Last Name"
-                            android:inputType="textEmailAddress"
-                            android:maxLines="1"
-                            android:singleLine="true" />
-
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  dob  -->
-                <LinearLayout
-                    android:id="@+id/date_wrapper"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/emailWrapper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
 
-                    android:clickable="true"
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  password  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/passwordWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  title  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+
+            </RelativeLayout>
+            <!--  first name  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/title_dropdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:minWidth="60dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/firstnameWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toRightOf="@id/title_dropdown"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/firstname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="First Name"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  last name  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/lastnameWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/lastname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Last Name"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  dob  -->
+            <LinearLayout
+                android:id="@+id/date_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="8dp"
+
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/dobTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="6dp"
-                    android:weightSum="3">
+                    android:text="DOB"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/dobTV"
+                    android:layout_weight="2">
 
                     <TextView
-                        android:id="@+id/dobTV"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="DOB"
-                        android:textSize="16sp" />
-
-                    <RelativeLayout
-                        android:layout_width="0dp"
+                        android:id="@+id/settings_date"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_toRightOf="@id/dobTV"
-                        android:layout_weight="2">
-
-                        <TextView
-                            android:id="@+id/settings_date"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginEnd="30dp"
-                            android:layout_marginRight="30dp"
-                            android:enabled="false"
-                            android:gravity="end"
-                            android:hint="@string/select_date"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-                <!--  contact number  -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/contactWrapper"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/contactnumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Contact Number"
-                            android:inputType="number"
-                            android:maxLines="1"
-                            android:singleLine="true" />
-
-
-                    </android.support.design.widget.TextInputLayout>
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginRight="30dp"
+                        android:enabled="false"
+                        android:gravity="end"
+                        android:hint="@string/select_date"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
 
                 </RelativeLayout>
-                <!--  mobile number -->
-                <RelativeLayout
+
+            </LinearLayout>
+            <!--  contact number  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/contactWrapper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/mobileWrapper"
+                    <EditText
+                        android:id="@+id/contactnumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/mobilenumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Mobile Number"
-                            android:inputType="number"
-                            android:maxLines="1"
-                            android:singleLine="true" />
+                        android:hint="Contact Number"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
 
-                    </android.support.design.widget.TextInputLayout>
+                </android.support.design.widget.TextInputLayout>
 
 
-                </RelativeLayout>
-                <!--  title  -->
-                <RelativeLayout
+            </RelativeLayout>
+            <!--  mobile number -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/mobileWrapper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
 
-                    <android.support.v7.widget.AppCompatSpinner
-                        android:id="@+id/newsletter_dropdown"
+                    <EditText
+                        android:id="@+id/mobilenumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp" />
+                        android:hint="Mobile Number"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
 
-                </RelativeLayout>
-                <!--  home address  -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="Home Address" />
-                <!--  addressLine1 -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
+                </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/addressLine1WrapperHome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
 
-                        <EditText
-                            android:id="@+id/addressLine1Home"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="AddressLine1" />
+            </RelativeLayout>
+            <!--  title  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
 
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  addressLine2 -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/addressLine2WrapperHome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/addressLine2Home"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="AddressLine2" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </RelativeLayout>
-                <!--  city -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/cityWrapperHome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/cityHome"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="City" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  county -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/countyWrapperHome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/countyHome"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="County" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </RelativeLayout>
-                <!--  post code -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/postCodeWrapperHome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/postCodeHome"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="PostCode" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  country -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/countryWrapperHome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/countryHome"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Country" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  Shipping address  -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="Shipping Address" />
-                <!--  addressLine1 -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/addressLine1WrapperShipping"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/addressLine1Shipping"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="AddressLine1" />
-
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  addressLine2 -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/addressLine2WrapperShipping"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/addressLine2Shipping"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="AddressLine2" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </RelativeLayout>
-                <!--  city -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/cityWrapperShipping"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/cityShipping"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="City" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  county -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/countyWrapperShipping"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/countyShipping"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="County" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </RelativeLayout>
-                <!--  post code -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/postCodeWrapperShipping"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/postCodeShipping"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="PostCode" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  country -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/countryWrapperShipping"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/countryShipping"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Country" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  Billing address  -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="Billing Address" />
-                <!--  addressLine1 -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/addressLine1WrapperBilling"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/addressLine1Billing"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="AddressLine1" />
-
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  addressLine2 -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/addressLine2WrapperBilling"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/addressLine2Billing"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="AddressLine2" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </RelativeLayout>
-                <!--  city -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/cityWrapperBilling"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/cityBilling"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="City" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  county -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/countyWrapperBilling"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/countyBilling"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="County" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                </RelativeLayout>
-                <!--  post code -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/postCodeWrapperBilling"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/postCodeBilling"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="PostCode" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-                <!--  country -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/countryWrapperBilling"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical">
-
-                        <EditText
-                            android:id="@+id/countryBilling"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Country" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </RelativeLayout>
-
-                <Button
-                    android:id="@+id/signUpBtn"
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/newsletter_dropdown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Sign Up" />
+                    android:layout_marginTop="10dp" />
 
-            </LinearLayout>
-        </ScrollView>
 
-    </LinearLayout>
+            </RelativeLayout>
+            <!--  home address  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="Home Address" />
+            <!--  addressLine1 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressLine1WrapperHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/addressLine1Home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="AddressLine1" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  addressLine2 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressLine2WrapperHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/addressLine2Home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="AddressLine2" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+            <!--  city -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/cityWrapperHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/cityHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="City" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  county -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/countyWrapperHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/countyHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="County" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+            <!--  post code -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/postCodeWrapperHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/postCodeHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="PostCode" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  country -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/countryWrapperHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/countryHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Country" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  Shipping address  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="Shipping Address" />
+            <!--  addressLine1 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressLine1WrapperShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/addressLine1Shipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="AddressLine1" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  addressLine2 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressLine2WrapperShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/addressLine2Shipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="AddressLine2" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+            <!--  city -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/cityWrapperShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/cityShipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="City" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  county -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/countyWrapperShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/countyShipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="County" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+            <!--  post code -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/postCodeWrapperShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/postCodeShipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="PostCode" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  country -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/countryWrapperShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/countryShipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Country" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  Billing address  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="Billing Address" />
+            <!--  addressLine1 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressLine1WrapperBilling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/addressLine1Billing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="AddressLine1" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  addressLine2 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressLine2WrapperBilling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/addressLine2Billing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="AddressLine2" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+            <!--  city -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/cityWrapperBilling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/cityBilling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="City" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  county -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/countyWrapperBilling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/countyBilling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="County" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+            <!--  post code -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/postCodeWrapperBilling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/postCodeBilling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="PostCode" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <!--  country -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/countryWrapperBilling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/countryBilling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Country" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/signUpBtn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@color/blue_color"
+                android:textColor="@color/white_color"
+                android:text="Sign Up" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </layout>

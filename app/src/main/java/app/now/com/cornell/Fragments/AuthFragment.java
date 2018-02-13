@@ -11,16 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
-import com.mobsandgeeks.saripaar.ValidationError;
-import com.mobsandgeeks.saripaar.Validator;
-import com.mobsandgeeks.saripaar.annotation.Email;
-import com.mobsandgeeks.saripaar.annotation.NotEmpty;
-import com.mobsandgeeks.saripaar.annotation.Password;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,17 +36,12 @@ import app.now.com.cornell.databinding.AuthFragmentBinding;
  * Created by Atif Afridi on 04-Feb-18.
  */
 
-public class AuthFragment extends Fragment implements View.OnClickListener, Validator.ValidationListener {
+public class AuthFragment extends Fragment implements View.OnClickListener {
 
     private OnAuthButtonClick onAuthButtonClick;
     private AuthFragmentBinding binding;
-    @NotEmpty
-    @Email
-    private EditText emailLogin;
-    @NotEmpty
-    @Password(min = 6, scheme = Password.Scheme.ALPHA_NUMERIC)
-    private EditText passwordLogin;
-    private Validator validator;
+    private EditText emailLogin, passwordLogin;
+    private boolean isValidemail, isValidpassword;
 
     public static AuthFragment newInstance() {
         return new AuthFragment();
@@ -61,8 +52,6 @@ public class AuthFragment extends Fragment implements View.OnClickListener, Vali
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.auth_fragment, container, false);
-        validator = new Validator(this);
-        validator.setValidationListener(this);
         binding.loginBtn.setOnClickListener(this);
         binding.signUp.setOnClickListener(this);
         passwordLogin = binding.passwordLogin;
@@ -79,7 +68,20 @@ public class AuthFragment extends Fragment implements View.OnClickListener, Vali
                     Toast.makeText(getActivity(), "No internet found!", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
-                    validator.validate();
+                    if (checkValues()) {
+                        NetworkProcess loginProcess = new NetworkProcess(getServiceListener(), getActivity());
+                        JSONObject loginBody = new JSONObject();
+                        try {
+                            loginBody.put("email", emailLogin.getText().toString().trim());
+                            loginBody.put("Password", passwordLogin.getText().toString().trim());
+                            loginBody.put("IPAddress", "192.0.2.0");
+                            loginProcess.serviceProcessing(loginBody, Constants.API_LOGIN);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+//                        Toast.makeText(getActivity(), "please recheck the fields", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
             case R.id.sign_up:
@@ -93,34 +95,37 @@ public class AuthFragment extends Fragment implements View.OnClickListener, Vali
         }
     }
 
-    @Override
-    public void onValidationSucceeded() {
-
-        NetworkProcess loginProcess = new NetworkProcess(getServiceListener(), getActivity());
-        JSONObject loginBody = new JSONObject();
-        try {
-            loginBody.put("email", emailLogin.getText().toString().trim());
-            loginBody.put("Password", passwordLogin.getText().toString().trim());
-            loginBody.put("IPAddress", "192.0.2.0");
-            loginProcess.serviceProcessing(loginBody, Constants.API_LOGIN);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onValidationFailed(List<ValidationError> errors) {
-        for (ValidationError error : errors) {
-            View view = error.getView();
-            String message = error.getCollatedErrorMessage(getActivity());
-            // Display error messages ;)
-            if (view instanceof EditText) {
-                ((EditText) view).setError(message);
+    private boolean checkValues() {
+        // email validation check
+        if (emailLogin.getText().toString().trim().length() > 0) {
+            if (Tools.isEmailValid(emailLogin.getText().toString())) {
+                isValidemail = true;
+                emailLogin.setError(null);
             } else {
-                Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                isValidemail = false;
+                emailLogin.setError("Enter valid email please");
             }
+        } else {
+            isValidemail = false;
+            emailLogin.setError("Email cannot be empty");
         }
+        // password validation check
+        if (passwordLogin.getText().toString().trim().length() > 0) {
+            if (Tools.isPasswordValid(passwordLogin.getText().toString())) {
+                isValidpassword = true;
+                passwordLogin.setError(null);
+            } else {
+                isValidpassword = false;
+                passwordLogin.setError("Enter valid password e.g = Aa1@#$%^&+= ");
+            }
+        } else {
+            isValidpassword = false;
+            passwordLogin.setError("Password cannot be empty");
+        }
+
+        return isValidemail && isValidpassword;
     }
+
 
     @NonNull
     private ServiceCallInterface getServiceListener() {

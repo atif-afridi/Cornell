@@ -14,10 +14,6 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
-import com.mobsandgeeks.saripaar.ValidationError;
-import com.mobsandgeeks.saripaar.Validator;
-import com.mobsandgeeks.saripaar.annotation.NotEmpty;
-import com.mobsandgeeks.saripaar.annotation.Password;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,31 +29,14 @@ import app.now.com.cornell.R;
 import app.now.com.cornell.Services.NetworkProcess;
 import app.now.com.cornell.Utils.Constants;
 import app.now.com.cornell.Utils.Logger;
+import app.now.com.cornell.Utils.Tools;
 import app.now.com.cornell.databinding.FragmentTopUpBinding;
 
-///**
-// * A simple {@link Fragment} subclass.
-// * Activities that contain this fragment must implement the
-// * {@link TopUpFragment.OnFragmentInteractionListener} interface
-// * to handle interaction events.
-// * Use the {@link TopUpFragment#newInstance} factory method to
-// * create an instance of this fragment.
-// */
-public class TopUpFragment extends Fragment implements Validator.ValidationListener, View.OnClickListener {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String expiryDate = "";
+public class TopUpFragment extends Fragment implements View.OnClickListener {
 
     private FragmentTopUpBinding binding;
-    private Validator validator;
-    @NotEmpty
-    @Password(min = 9, scheme = Password.Scheme.NUMERIC)
-    private EditText etMsidin;
-    @NotEmpty
-    @Password(min = 9, scheme = Password.Scheme.NUMERIC)
-    private EditText etEnterPin;
+    private boolean isValidetMsidin, isValidetEnterPin;
+    private EditText etMsidin, etEnterPin;
     private LoginResponseModel model;
     private boolean callTopUp;
 
@@ -66,7 +45,6 @@ public class TopUpFragment extends Fragment implements Validator.ValidationListe
     public TopUpFragment() {
         // Required empty public constructor
     }
-
 
     public static TopUpFragment newInstance(LoginResponseModel expiry) {
         TopUpFragment fragment = new TopUpFragment();
@@ -101,27 +79,12 @@ public class TopUpFragment extends Fragment implements Validator.ValidationListe
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_top_up, container, false);
-        validator = new Validator(this);
-        validator.setValidationListener(this);
         etMsidin = binding.etMsidin;
         etEnterPin = binding.etEnterPin;
         binding.btTopupBtn.setOnClickListener(this);
         binding.btLogoutBtn.setOnClickListener(this);
 
         return binding.getRoot();
-    }
-
-    @Override
-    public void onValidationSucceeded() {
-        try {
-            if (callTopUp) {
-                makeTopUpRequest();
-            } else {
-                Toast.makeText(getActivity(), "No Session found, Re-login again please.", Toast.LENGTH_SHORT).show();
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
     private void makeTopUpRequest() throws JSONException {
@@ -136,7 +99,6 @@ public class TopUpFragment extends Fragment implements Validator.ValidationListe
         NetworkProcess networkProcess = new NetworkProcess(getTopUpService, getActivity(), true, model.getPayload().getAuthentication().getToken());
         networkProcess.serviceProcessing(topUpBody, Constants.API_SIGNUP);
     }
-
 
     ServiceCallInterface getTopUpService = new ServiceCallInterface() {
         @Override
@@ -176,19 +138,6 @@ public class TopUpFragment extends Fragment implements Validator.ValidationListe
         }
     };
 
-    @Override
-    public void onValidationFailed(List<ValidationError> errors) {
-        for (ValidationError error : errors) {
-            View view = error.getView();
-            String message = error.getCollatedErrorMessage(getActivity());
-            // Display error messages ;)
-            if (view instanceof EditText) {
-                ((EditText) view).setError(message);
-            } else {
-                Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
-            }
-        }
-    }
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
@@ -201,11 +150,44 @@ public class TopUpFragment extends Fragment implements Validator.ValidationListe
         }
     }
 
+    private boolean checkValues() {
+        // etMsidin validation check
+        if (etMsidin.getText().toString().trim().length() > 0) {
+            isValidetMsidin = true;
+            etMsidin.setError(null);
+        } else {
+            isValidetMsidin = false;
+            etMsidin.setError("Msidin cannot be empty");
+        }
+        // etEnterPin validation check
+        if (etEnterPin.getText().toString().trim().length() > 0) {
+            isValidetEnterPin = true;
+            etEnterPin.setError(null);
+        } else {
+            isValidetEnterPin = false;
+            etEnterPin.setError("Pin cannot be empty");
+        }
+        return isValidetMsidin && isValidetEnterPin;
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_topupBtn:
-                validator.validate();
+                if (checkValues()) {
+                    Toast.makeText(getActivity(), "check is passed", Toast.LENGTH_SHORT).show();
+//                    try {
+//                        if (callTopUp) {
+//                            makeTopUpRequest();
+//                        } else {
+//                            Toast.makeText(getActivity(), "No Session found, Re-login again please.", Toast.LENGTH_SHORT).show();
+//                        }
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+                } else {
+//                    Toast.makeText(getActivity(), "please recheck the fields", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.bt_logoutBtn:
                 //clear session

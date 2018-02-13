@@ -8,19 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mobsandgeeks.saripaar.ValidationError;
-import com.mobsandgeeks.saripaar.Validator;
+
 
 import java.util.List;
 
 import app.now.com.cornell.R;
 
 
-public class HistoryFragment extends Fragment implements Validator.ValidationListener {
+public class HistoryFragment extends Fragment{
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private Validator validator;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -54,20 +53,9 @@ public class HistoryFragment extends Fragment implements Validator.ValidationLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        validator = new Validator(this);
-        validator.setValidationListener(this);
         return inflater.inflate(R.layout.fragment_history, container, false);
     }
 
-    @Override
-    public void onValidationSucceeded() {
-
-    }
-
-    @Override
-    public void onValidationFailed(List<ValidationError> errors) {
-
-    }
 
 //    public void onButtonPressed(Uri uri) {
 //        if (mListener != null) {
