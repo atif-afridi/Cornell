@@ -155,6 +155,7 @@ public class AuthFragment extends Fragment implements View.OnClickListener {
                                 onAuthButtonClick.logInClicked(model);
                             } else {
                                 // TODO here
+                                Toast.makeText(getActivity(), "Please SignUp First", Toast.LENGTH_SHORT).show();
                             }
 
                         }

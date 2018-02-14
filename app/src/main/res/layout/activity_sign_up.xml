@@ -2,25 +2,31 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <android.support.v4.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/main_color"
         android:orientation="vertical"
-        android:id="@+id/scrollView"
         tools:context="app.now.com.cornell.Fragments.SignUpFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="100dp"
-            android:background="@color/main_color"
+            android:background="@color/white_color"
             android:clipToPadding="false"
             android:orientation="vertical"
             android:padding="10dp">
+
+
             <!--  email  -->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/emailWrapper"
@@ -33,6 +39,7 @@
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
@@ -47,7 +54,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/passwordWrapper"
@@ -60,6 +73,7 @@
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Password"
                         android:inputType="textPassword"
                         android:maxLines="1"
@@ -74,7 +88,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
 
             </RelativeLayout>
@@ -82,7 +102,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/title_dropdown"
@@ -105,6 +131,7 @@
                         android:id="@+id/firstname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="First Name"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
@@ -119,7 +146,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/lastnameWrapper"
@@ -132,6 +165,7 @@
                         android:id="@+id/lastname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Last Name"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
@@ -149,11 +183,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="8dp"
-
+                android:background="@drawable/bg_input_box"
                 android:clickable="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="6dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
                 android:weightSum="3">
 
                 <TextView
@@ -162,8 +201,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="DOB"
-                    android:textSize="16sp" />
+                    android:text="@string/select_date"
+                    android:textSize="16sp"
+                    android:paddingLeft="5dp" />
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -175,15 +215,15 @@
 
                     <TextView
                         android:id="@+id/settings_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginEnd="30dp"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
                         android:enabled="false"
+                        android:background="@drawable/calenderfinal"
                         android:gravity="end"
-                        android:hint="@string/select_date"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -195,7 +235,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/contactWrapper"
@@ -208,6 +254,7 @@
                         android:id="@+id/contactnumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Contact Number"
                         android:inputType="number"
                         android:maxLines="1"
@@ -222,7 +269,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/mobileWrapper"
@@ -235,6 +288,7 @@
                         android:id="@+id/mobilenumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Mobile Number"
                         android:inputType="number"
                         android:maxLines="1"
@@ -249,7 +303,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp">
 
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/newsletter_dropdown"
@@ -261,18 +320,53 @@
 
             </RelativeLayout>
             <!--  home address  -->
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="center_horizontal"
-                android:padding="6dp"
-                android:text="Home Address" />
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/homeAddressTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="6dp"
+                    android:text="Home Address"
+                    android:textColor="@color/blue_color"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/home"
+                    android:layout_toRightOf="@id/homeAddressTV" />
+
+
+            </RelativeLayout>
             <!--  addressLine1 -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/addressLine1WrapperHome"
@@ -285,6 +379,7 @@
                         android:id="@+id/addressLine1Home"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="AddressLine1" />
 
 
@@ -296,7 +391,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/addressLine2WrapperHome"
@@ -309,6 +410,7 @@
                         android:id="@+id/addressLine2Home"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="AddressLine2" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -318,7 +420,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/cityWrapperHome"
@@ -331,6 +439,7 @@
                         android:id="@+id/cityHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="City" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -341,7 +450,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/countyWrapperHome"
@@ -354,6 +469,7 @@
                         android:id="@+id/countyHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="County" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -363,7 +479,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/postCodeWrapperHome"
@@ -376,6 +498,7 @@
                         android:id="@+id/postCodeHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="PostCode" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -386,7 +509,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/countryWrapperHome"
@@ -399,6 +528,7 @@
                         android:id="@+id/countryHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Country" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -406,18 +536,53 @@
 
             </RelativeLayout>
             <!--  Shipping address  -->
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="center_horizontal"
-                android:padding="6dp"
-                android:text="Shipping Address" />
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/shippingAddressTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="6dp"
+                    android:text="Shipping Address"
+                    android:textColor="@color/blue_color"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/shipping"
+                    android:layout_toRightOf="@id/shippingAddressTV" />
+
+
+            </RelativeLayout>
             <!--  addressLine1 -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/addressLine1WrapperShipping"
@@ -430,6 +595,7 @@
                         android:id="@+id/addressLine1Shipping"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="AddressLine1" />
 
 
@@ -441,7 +607,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/addressLine2WrapperShipping"
@@ -454,6 +626,7 @@
                         android:id="@+id/addressLine2Shipping"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="AddressLine2" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -463,7 +636,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/cityWrapperShipping"
@@ -476,6 +655,7 @@
                         android:id="@+id/cityShipping"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="City" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -486,7 +666,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/countyWrapperShipping"
@@ -499,6 +685,7 @@
                         android:id="@+id/countyShipping"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="County" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -508,7 +695,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/postCodeWrapperShipping"
@@ -521,6 +714,7 @@
                         android:id="@+id/postCodeShipping"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="PostCode" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -531,7 +725,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/countryWrapperShipping"
@@ -544,6 +744,7 @@
                         android:id="@+id/countryShipping"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Country" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -551,18 +752,53 @@
 
             </RelativeLayout>
             <!--  Billing address  -->
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="center_horizontal"
-                android:padding="6dp"
-                android:text="Billing Address" />
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/billingAddressTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="6dp"
+                    android:text="Billing Address"
+                    android:textColor="@color/blue_color"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/billing"
+                    android:layout_toRightOf="@id/billingAddressTV" />
+
+
+            </RelativeLayout>
             <!--  addressLine1 -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/addressLine1WrapperBilling"
@@ -575,6 +811,7 @@
                         android:id="@+id/addressLine1Billing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="AddressLine1" />
 
 
@@ -586,7 +823,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/addressLine2WrapperBilling"
@@ -599,6 +842,7 @@
                         android:id="@+id/addressLine2Billing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="AddressLine2" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -608,7 +852,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/cityWrapperBilling"
@@ -621,6 +871,7 @@
                         android:id="@+id/cityBilling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="City" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -631,7 +882,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/countyWrapperBilling"
@@ -653,7 +910,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/postCodeWrapperBilling"
@@ -666,6 +929,7 @@
                         android:id="@+id/postCodeBilling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="PostCode" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -676,7 +940,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/countryWrapperBilling"
@@ -689,6 +959,7 @@
                         android:id="@+id/countryBilling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Country" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -696,19 +967,19 @@
 
             </RelativeLayout>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/signUpBtn"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="70dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
                 android:background="@color/blue_color"
-                android:textColor="@color/white_color"
-                android:text="Sign Up" />
+                android:text="Sign Up"
+                android:textColor="@color/white_color" />
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

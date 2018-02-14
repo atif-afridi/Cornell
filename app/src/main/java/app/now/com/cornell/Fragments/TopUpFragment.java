@@ -175,16 +175,15 @@ public class TopUpFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.bt_topupBtn:
                 if (checkValues()) {
-                    Toast.makeText(getActivity(), "check is passed", Toast.LENGTH_SHORT).show();
-//                    try {
-//                        if (callTopUp) {
-//                            makeTopUpRequest();
-//                        } else {
-//                            Toast.makeText(getActivity(), "No Session found, Re-login again please.", Toast.LENGTH_SHORT).show();
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
+                    try {
+                        if (callTopUp) {
+                            makeTopUpRequest();
+                        } else {
+                            Toast.makeText(getActivity(), "No Session found, Re-login again please.", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 } else {
 //                    Toast.makeText(getActivity(), "please recheck the fields", Toast.LENGTH_SHORT).show();
                 }

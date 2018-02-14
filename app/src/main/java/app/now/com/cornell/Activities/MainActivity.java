@@ -20,7 +20,7 @@ import app.now.com.cornell.Utils.Constants;
 import app.now.com.cornell.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements AuthFragment.OnAuthButtonClick
-        , SignUpFragment.SignUpCompleteListner,TopUpFragment.OnTopUpClicks {
+        , SignUpFragment.SignUpCompleteListner, TopUpFragment.OnTopUpClicks {
     private TextView toolbarHeader;
     private ActivityMainBinding binding;
     private String json;
@@ -32,15 +32,6 @@ public class MainActivity extends AppCompatActivity implements AuthFragment.OnAu
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         /**setting screens**/
         setViews();
-//        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
-//            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
-//        }
-//        fragmentTransection(HomeFragment.newInstance(null), "signup");
-//        toolbarHeader.setText(R.string.home);
-
-
-//        loadEntryScreen();
-
 
         Gson gson = new Gson();
         SharedPreferences prefs = getSharedPreferences(Constants.SESSION_TOKEN, MODE_PRIVATE);

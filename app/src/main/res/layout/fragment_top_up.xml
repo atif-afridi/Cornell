@@ -4,7 +4,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_gray"
+        android:background="@color/white_color"
         tools:context="app.now.com.cornell.Fragments.TopUpFragment">
 
         <LinearLayout
@@ -17,7 +17,13 @@
             <!--  contact no  -->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/et_msidinWrapper"
@@ -31,6 +37,7 @@
                         android:id="@+id/et_msidin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Enter Mobile Number"
                         android:inputType="number"
                         android:maxLines="1"
@@ -46,7 +53,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_box"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/et_enterPinWrapper"
@@ -60,6 +73,7 @@
                         android:id="@+id/et_enterPin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
                         android:hint="Enter Pin"
                         android:inputType="number"
                         android:maxLines="1"
@@ -72,30 +86,40 @@
 
             </RelativeLayout>
 
+
             <Button
                 android:id="@+id/bt_topupBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="TopUp" />
+                android:background="@color/blue_color"
+                android:text="TopUp"
+                android:textColor="@color/white_color" />
 
 
         </LinearLayout>
+
         <Button
             android:id="@+id/bt_logoutBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/blue_color"
             android:text="Logout"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+            android:textColor="@color/white_color"
 
             />
     </RelativeLayout>

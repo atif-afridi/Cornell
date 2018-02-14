@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -32,8 +31,6 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 
 import app.now.com.cornell.Activities.MainActivity;
@@ -43,7 +40,6 @@ import app.now.com.cornell.NetworkCallBacks.ServiceCallInterface;
 import app.now.com.cornell.R;
 import app.now.com.cornell.Services.NetworkProcess;
 import app.now.com.cornell.Utils.Constants;
-import app.now.com.cornell.Utils.Logger;
 import app.now.com.cornell.Utils.Tools;
 import app.now.com.cornell.databinding.ActivitySignUpBinding;
 
@@ -62,7 +58,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     private SignupModel signupModel;
     private JSONObject userInfoJson;
     private SignUpCompleteListner signUpCompleteListner;
-    private boolean isValidinput;
     private NestedScrollView scrollView;
 
     public static SignUpFragment newInstance() {
@@ -97,30 +92,14 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
         newsletterAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, res.getStringArray(R.array.newsletter_arrays));
         newsletterDropdown.setAdapter(newsletterAdapter);
         newsletterDropdown.setSelection(0);
-        newsletterDropdown.setOnItemSelectedListener(getTitleSpinner());
     }
 
     private void setTitleSpinner(Resources res) {
         titleAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, res.getStringArray(R.array.title_arrays));
         titleDropDown.setAdapter(titleAdapter);
         titleDropDown.setSelection(0);
-        titleDropDown.setOnItemSelectedListener(getTitleSpinner());
     }
 
-    @NonNull
-    private AdapterView.OnItemSelectedListener getTitleSpinner() {
-        return new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        };
-    }
 
     private void fillSignupModel() {
 
@@ -250,7 +229,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
         titleDropDown = rootView.titleDropdown;
         newsletterDropdown = rootView.newsletterDropdown;
         txtdob = (TextView) rootView.dobTV;
-        txtdob.setText("");
         dateWrapper = rootView.dateWrapper;
         scrollView = rootView.scrollView;
         setDateField();
@@ -302,7 +280,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                     return;
                 } else {
                     if (checkValues()) {
-//                        Toast.makeText(getActivity(), "check is passed", Toast.LENGTH_SHORT).show();
                         try {
                             makeSignupRequest();
                         } catch (JSONException e) {
@@ -315,7 +292,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                                 scrollView.fullScroll(ScrollView.FOCUS_UP);
                             }
                         });
-//                        Toast.makeText(getActivity(), "please recheck the fields", Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
@@ -473,7 +449,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                                 }
                             }
                         } else {
-                            Toast.makeText(getActivity(), "unsuccessful response", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), model.getMessage().toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 } catch (JSONException e) {
